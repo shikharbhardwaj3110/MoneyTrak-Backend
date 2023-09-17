@@ -4,7 +4,6 @@ const mongoose = require("mongoose");
 const DynamicExpensesSchema = new mongoose.Schema({}, { strict: false });
 
 const userSchema = new mongoose.Schema({
-    _id : ObjectId,
     username :  {
         type : String,
         required : true,
@@ -17,9 +16,13 @@ const userSchema = new mongoose.Schema({
     data : {
         currentIncome : {
             type : Number,
-            required : true
         },
-        expenses : [DynamicExpensesSchema]
+        expenses : [
+            {
+                category : String,
+                amount : Number
+            }
+        ]
     }
 });
 
