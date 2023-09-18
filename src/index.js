@@ -3,7 +3,8 @@ const cors = require("cors");
 const helmet = require("helmet");
 const bodyParser = require("body-parser");
 const connectToDatabase = require("./db");
-const userRouter = require("./routes/userRoutes");
+const authRouter = require("./routes/authRoutes");
+const dataRouter = require("./routes/dataRoutes");
 
 const app = express();
 
@@ -16,7 +17,8 @@ app.use(bodyParser.urlencoded({ extended : true }));
 
 connectToDatabase();
 
-app.use("/users", userRouter);
+app.use("/api/auth", authRouter);
+app.use("/api/data", dataRouter);
 
 app.listen(port, () => {
     console.log("Server running on port : ", port);
