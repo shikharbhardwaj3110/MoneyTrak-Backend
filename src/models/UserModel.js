@@ -1,7 +1,4 @@
-const { ObjectId } = require("mongodb");
 const mongoose = require("mongoose");
-
-const DynamicExpensesSchema = new mongoose.Schema({}, { strict: false });
 
 const userSchema = new mongoose.Schema({
     username :  {

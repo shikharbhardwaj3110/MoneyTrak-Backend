@@ -4,7 +4,6 @@ require("dotenv").config();
 const jwtAuthMiddleware = (req, res, next) => {
     const bearerToken = req.header('Authorization');
     const token = bearerToken.split(' ')[1];
-    console.log(token);
     if (!token)
         return res.status(401).json({ error: 'No token found ! Validation failed.' });
     try {

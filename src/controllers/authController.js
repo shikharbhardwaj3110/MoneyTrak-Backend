@@ -24,9 +24,6 @@ const createUser = async (req, res) => {
     }
 };
 
-
-// USER-LOGIN
-
 const validateUser = async (req, res) => {
     const { username, password } = req.body;
     try {
